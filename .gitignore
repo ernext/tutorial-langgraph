@@ -1,0 +1,13 @@
+# Copione dei video: resta locale, non va nel repo pubblico
+guida/
+
+# Ambiente Python (si ricrea con `uv sync`)
+.venv/
+__pycache__/
+*.py[cod]
+
+# Dati generati dagli esempi
+*.db
+
+# macOS
+.DS_Store
