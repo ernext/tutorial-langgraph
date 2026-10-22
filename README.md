@@ -42,15 +42,21 @@ uv run python verifca.py
 
 | file | lezione | cosa mostra |
 |---|---|---|
-| `verifca.py` | 00 | il modello locale risponde e sa chiamare i tool |
-| `agent_a_mano.py` | 01-02 | un agent scritto a mano: stato, nodi, archi, ciclo ReAct |
-| `create-agent.py` | 03 | lo stesso agent con `create_agent`: 40 righe diventano 3 |
+| `verifca.py` | 0 | il modello locale risponde e sa chiamare i tool |
+| `agent_a_mano.py` | 1 | un agent scritto a mano: stato, nodi, archi, ciclo ReAct — e come si progettano i tool |
+| `create-agent.py` | 2 | lo stesso agent con `create_agent`: 40 righe diventano 3 |
+| `memoria.py` | 3 | il checkpointer: l'agent ricorda. Memoria in RAM, separata per `thread_id` |
+| `memoria_disco.py` | 3 | la stessa memoria su file SQLite: sopravvive al riavvio del processo |
 
 Ogni file è eseguibile da solo:
 
 ```bash
 uv run python agent_a_mano.py
 ```
+
+`memoria_disco.py` va lanciato **due volte**: la prima crea il database, la
+seconda dimostra che la conversazione è sopravvissuta al riavvio. Per ripartire
+da zero, `rm memoria.db`.
 
 > Il repo cresce lezione per lezione: ogni commit corrisponde a un video.
 
