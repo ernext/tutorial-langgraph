@@ -47,6 +47,7 @@ uv run python verifca.py
 | `create-agent.py` | 2 | lo stesso agent con `create_agent`: 40 righe diventano 3 |
 | `memoria.py` | 3 | il checkpointer: l'agent ricorda. Memoria in RAM, separata per `thread_id` |
 | `memoria_disco.py` | 3 | la stessa memoria su file SQLite: sopravvive al riavvio del processo |
+| `time_travel.py` | 4 | la cronologia dei checkpoint: rileggere il passato e ripartire da un punto qualsiasi |
 
 Ogni file è eseguibile da solo:
 
